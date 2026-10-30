@@ -88,7 +88,7 @@ footer{padding:30px 0;color:var(--muted);font-size:14px}
 <h2>Skills</h2>
 <div class="grid">
 <div class="card"><h3>IT support</h3><p class="muted">Fast, patient troubleshooting for users.</p><div class="chips"><span>Windows &amp; Linux troubleshooting</span><span>OS &amp; software installation</span><span>Laptop &amp; hardware repair</span><span>Printer setup</span><span>Network troubleshooting</span><span>Active Directory</span><span>Ticketing systems</span></div></div>
-<div class="card"><h3>Programming</h3><p class="muted">Building and maintaining reliable applications.</p><div class="chips"><span>Python</span><span>Dart (Flutter)</span><span>SQL</span></div></div>
+<div class="card"><h3>Programming</h3><p class="muted">Building and maintaining reliable applications.</p><div class="chips"><span>Python</span><span>Java</span><span>C#</span><span>C++</span><span>PHP</span><span>Dart (Flutter)</span><span>SQL</span><span>HTML</span></div></div>
 <div class="card"><h3>CS fundamentals</h3><p class="muted">The theory behind the tools.</p><div class="chips"><span>Data Structures</span><span>Algorithms</span><span>Databases</span><span>Computability</span></div></div>
 <div class="card"><h3>Data &amp; analytics</h3><p class="muted">From messy datasets to clear dashboards.</p><div class="chips"><span>Power BI (DAX)</span><span>Tableau</span><span>Excel</span><span>Power Query</span><span>PySpark</span><span>Databricks</span></div></div>
 <div class="card"><h3>Tools</h3><p class="muted">Platforms used in my projects.</p><div class="chips"><span>Firebase Auth &amp; Firestore</span><span>Google Maps API</span><span>Git &amp; GitHub</span></div></div>
@@ -150,7 +150,7 @@ var P=[
 {t:"I turn raw data into numbers people can act on.",l:["Clean and model data with SQL, Python and Power Query","Build dashboards in Power BI with clear KPIs","Explain findings to non-technical teams"]},
 {t:"I solve technical problems quickly and keep users informed.",l:["Troubleshoot Windows, Linux, network and software issues","Track and close tickets with clear documentation","Set up accounts, devices and access"]}];
 var tabs=document.querySelectorAll(".tabs button"),box=document.getElementById("pitch");
-function show(i){tabs.forEach(function(b,k){b.setAttribute("aria-selected",k==i)});
+function show(i){tabs.forEach(function(b){b.setAttribute("aria-selected",+b.dataset.i===i)});
 box.innerHTML="<strong>"+P[i].t+"</strong><ul>"+P[i].l.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"}
 tabs.forEach(function(b){b.addEventListener("click",function(){show(+b.dataset.i)})});
 show(2);document.getElementById("y").textContent=new Date().getFullYear();
